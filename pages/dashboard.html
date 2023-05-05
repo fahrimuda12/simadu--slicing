@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!-- datatable css -->
+    <link
+      href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/select/1.6.2/css/select.dataTables.min.css"
+    />
+
+    <style>
+      .dataTables_wrapper {
+        width: 100%;
+      }
+
+      div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        margin: 1em 0;
+        white-space: nowrap;
+        justify-content: flex-start;
+      }
+
+      .arrow-toggle {
+        top: 6.5em;
+        right: -22px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .content-section {
+        margin-left: 340px;
+      }
+
+      .content-section.group-collapse {
+        margin-left: 8em;
+      }
+
+      .sidebar-content {
+        width: 301px;
+        height: 100vh;
+      }
+
+      .sidebar-content.collapse {
+        width: 86px;
+      }
+
+      .sidebar-content.collapse .brand-title {
+        margin-bottom: 1.5rem;
+      }
+
+      .sidebar-content.collapse .brand-title span {
+        display: none !important;
+      }
+
+      .sidebar-content.collapse ul li a span {
+        display: none !important;
+      }
+    </style>
+
+    <title>Bootstrap Sass &amp; JS</title>
+  </head>
+  <body>
+    <!-- sidebar -->
+    <aside id="sidebar" class="position-fixed z-3 top-0">
+      <div
+        class="d-flex flex-column flex-shrink-0 p-3 bg-white overflow-hidden sidebar-content"
+        id="sidebarContent"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none gap-2 column-gap-2"
+        >
+          <!-- <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+          </svg> -->
+          <img src="../assets/img/logo-dashboard.png" alt="" />
+          <div class="d-flex flex-column brand-title">
+            <span class="fs-4 text-blue-brand">SIMADU UNILA</span>
+            <span class="fs-7 text-blue-brand text-uppercase">
+              SISTEM INFORMASI MANAJEMEN AJUNGAN UNILA
+            </span>
+          </div>
+        </a>
+        <div class="main-divider" id="mainDivider">
+          <p class="text-gray mb-0 mt-4 text-uppercase d-none d-sm-block">
+            Menu Utama
+          </p>
+          <div
+            class="position-absolute d-flex justify-content-center align-items-center bg-white rounded-circle arrow-toggle"
+          >
+            <button
+              type="button"
+              class="btn rounded-circle"
+              id="dropdownSidebar"
+            >
+              <iconify-icon
+                icon="material-symbols:arrow-back-ios-rounded"
+              ></iconify-icon>
+            </button>
+          </div>
+        </div>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 gap-2" id="menu">
+          <li class="nav-item">
+            <div>
+              <a
+                href="#"
+                class="nav-link d-flex align-middle gap-2"
+                aria-current="page"
+              >
+                <iconify-icon
+                  icon="carbon:grid"
+                  style="color: white"
+                  width="24"
+                  height="24"
+                  class="bg-green-dark p-1 rounded"
+                ></iconify-icon>
+                <span class="ms-1 d-none d-sm-inline"> Dashboard </span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a
+                href="#"
+                class="nav-link d-flex align-items-center gap-2 active"
+                aria-current="page"
+              >
+                <iconify-icon
+                  icon="carbon:data-check"
+                  style="color: white"
+                  width="24"
+                  height="24"
+                  class="bg-primary p-1 rounded"
+                ></iconify-icon>
+                <span class="ms-1 d-none d-sm-inline"> Daftar Agenda </span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a
+                href="#"
+                class="nav-link d-flex align-items-center gap-2"
+                aria-current="page"
+              >
+                <iconify-icon
+                  icon="carbon:ibm-watson-knowledge-catalog"
+                  style="color: white"
+                  width="24"
+                  height="24"
+                  class="bg-oren p-1 rounded"
+                ></iconify-icon>
+                <span class="ms-1 d-none d-sm-inline"> Agenda Bulanan </span>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <!-- <hr /> -->
+        <!-- <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://github.com/mdo.png"
+              alt=""
+              width="32"
+              height="32"
+              class="rounded-circle me-2"
+            />
+            <strong>mdo</strong>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-dark text-small shadow"
+            aria-labelledby="dropdownUser1"
+          >
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div> -->
+      </div>
+    </aside>
+
+    <!-- footer fixed -->
+    <footer class="fixed-bottom z-0">
+      <div class="d-flex py-2 px-5 bg-white justify-content-end w-100">
+        <div class="d-flex flex-row gap-2">
+          <p class="fs-7 text-primary">© 2023 All Right Reserved. UNILA</p>
+        </div>
+      </div>
+    </footer>
+    <!-- content -->
+    <section id="contentSection" class="me-5 content-section">
+      <div class="row mt-4 p-4 bg-white gx-3 align-items-center rounded-3">
+        <div class="col-5 d-flex flex-row gap-2">
+          <div>
+            <iconify-icon
+              icon="carbon:data-check"
+              width="60"
+              height="60"
+              class="text-white bg-primary"
+            ></iconify-icon>
+          </div>
+          <div class="d-flex flex-column">
+            <h4>Daftar Agenda</h4>
+            <p class="fs-6">Manajemen agenda yang akan datang</p>
+          </div>
+        </div>
+        <div class="col-5 input-group rounded">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="Cari Agenda"
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+        </div>
+        <div class="col d-flex flex-row gap-1">
+          <div>
+            <iconify-icon
+              icon="carbon:download"
+              width="28"
+              height="28"
+              class="bg-green-light p-1 rounded"
+            >
+            </iconify-icon>
+          </div>
+          <p class="fs-7">Download Agenda Sebagai Excel</p>
+        </div>
+      </div>
+
+      <!-- List Agenda -->
+      <div
+        class="d-flex flex-column my-4 bg-white align-items-center rounded-3"
+      >
+        <div
+          class="d-flex flex-row px-4 pt-5 pb-2 justify-content-between align-items-center w-100 bg-green-light"
+        >
+          <p class="text-capitalize">List Agenda</p>
+          <button type="button" class="btn btn-primary">+ Tambah Agenda</button>
+        </div>
+        <div class="d-flex bg-white w-100 px-4">
+          <table id="table" class="display table" style="width: 100%">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="text-green-dark text-capitalize">No</th>
+                <th class="text-green-dark text-capitalize">Judul Agenda</th>
+                <th class="text-green-dark text-capitalize">Lokasi</th>
+                <th class="text-green-dark text-capitalize">Hari/Tanggal</th>
+                <th class="text-green-dark text-capitalize">Mulai</th>
+                <th class="text-green-dark text-capitalize">Selesai</th>
+                <th class="text-green-dark text-capitalize">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>Rapat Penyamaan Persepsi Penilaian BKD</td>
+                <td>Rektorat - Lantai 2 - Ruang Sidang Utama</td>
+                <td>Selasa, 14 Juni 2022</td>
+                <td>09:00</td>
+                <td>12:00</td>
+                <td class="row row-cols-2">
+                  <div>
+                    <a href=""
+                      ><iconify-icon
+                        icon="carbon:edit"
+                        width="28"
+                        height="28"
+                        class="bg-green-light p-1 rounded"
+                      ></iconify-icon
+                    ></a>
+                  </div>
+                  <div>
+                    <a href="">
+                      <iconify-icon
+                        icon="carbon:erase"
+                        width="28"
+                        height="28"
+                        class="bg-green-light p-1 rounded"
+                      ></iconify-icon>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>2</td>
+                <td>Rapat Penyamaan Persepsi Penilaian BKD</td>
+                <td>Rektorat - Lantai 2 - Ruang Sidang Utama</td>
+                <td>Selasa, 14 Juni 2022</td>
+                <td>09:00</td>
+                <td>12:00</td>
+                <td class="row row-cols-2">
+                  <div>
+                    <a href=""
+                      ><iconify-icon
+                        icon="carbon:edit"
+                        width="28"
+                        height="28"
+                        class="bg-green-light p-1 rounded"
+                      ></iconify-icon
+                    ></a>
+                  </div>
+                  <div>
+                    <a href="">
+                      <iconify-icon
+                        icon="carbon:erase"
+                        width="28"
+                        height="28"
+                        class="bg-green-light p-1 rounded"
+                      ></iconify-icon>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- datatable js -->
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.6.2/js/dataTables.select.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#table").DataTable({
+          searching: false,
+          ordering: false,
+          dom: "rtip",
+          bInfo: false,
+          columnDefs: [
+            {
+              orderable: false,
+              className: "select-checkbox",
+              targets: 0,
+            },
+          ],
+          select: {
+            style: "os",
+            selector: "td:first-child",
+          },
+          order: [[1, "asc"]],
+        });
+      });
+    </script>
+
+    <script>
+      const toggle = document.getElementById("dropdownSidebar");
+      const sidebar = document.getElementById("sidebarContent");
+      const content = document.getElementById("contentSection");
+      toggle.addEventListener("click", () => {
+        // show navbar
+        sidebar.classList.toggle("collapse");
+        content.classList.toggle("group-collapse");
+      });
+    </script>
+  </body>
+</html>

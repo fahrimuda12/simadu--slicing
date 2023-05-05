@@ -1,0 +1,217 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+@import "bootstrap/scss/bootstrap";
+
+// Option 2
+//
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Customize some defaults
+// $body-color: #333;
+// $body-bg: #fff;
+// $border-radius: 0.4rem;
+// $success: #7952b3;
+
+// my custom color styles
+$gray: #f3f4f8;
+$gray-custom: #dbdbdb;
+$green-light: #d1f9df;
+$green-dark: #0f9d58;
+$text-black: #200e32;
+$blue-brand: #22a0d6;
+$secondary-blue: #1e72ef;
+$oren: #ff8a00;
+
+// my custom list / link group styles
+$list-group-action-active-bg: $gray-custom;
+$link-color: $text-black;
+
+// pagination variable
+$pagination-bg: $blue-brand;
+$pagination-color: #ffff;
+$pagination-disabled-bg: rgba(34, 160, 214, 0.3);
+// $pagination-border-width: 0;
+
+// my custom opacity
+
+// Required
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+// @import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/accordion";
+@import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas"; // Requires transitions
+// @import "bootstrap/scss/placeholders";
+
+// Helpers
+// @import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+//
+// Custom styles
+//
+
+@import "icon-list";
+
+body {
+  padding: 0rem;
+  background-color: $gray-custom;
+}
+
+.text-blue-brand {
+  color: $blue-brand;
+}
+
+.text-green-light {
+  color: $green-light;
+}
+
+.text-green-dark {
+  color: $green-dark;
+}
+
+.text-gray {
+  color: #000000;
+  opacity: 50%;
+}
+
+.bg-green-light {
+  background-color: $green-light;
+}
+
+.bg-green-dark {
+  background-color: $green-dark;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-oren {
+  background-color: $oren;
+}
+
+.bg-blue-brand {
+  background-color: $blue-brand;
+}
+
+.fs-7 {
+  font-size: 0.8rem;
+}
+
+.nav-pills .nav-link.active {
+  color: $text-black;
+  background-color: $gray-custom; //ganti dengan warna abu-abu yang Anda inginkan
+}
+
+.navbar-nav .nav-link.active {
+  color: $secondary-blue;
+  border-bottom: 2px solid $secondary-blue;
+  border-width: 3px;
+}
+
+p {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.mx-6 {
+  margin-right: 5rem !important;
+  margin-left: 5rem !important;
+}
+
+.card-agenda div .active {
+  background-color: $green-light !important;
+  color: $green-dark;
+  border-left: 1rem solid $green-dark;
+}
+
+.card-agenda div .active::before {
+  content: "";
+  position: relative;
+  background: url("../assets/img/pin\ 1.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  top: -20px;
+  left: -20px;
+}
+
+.w-250 {
+  width: 250px;
+}
+
+.h-40 {
+  height: 40px;
+}
+
+// $list-group-action-active-bg: #7952b3;
+// $list-group-hover-bg: var(--#{$prefix}tertiary-bg);
+// $list-group-active-color: $component-active-color;
+// $list-group-active-bg: $component-active-bg;
+// $list-group-active-border-color: $list-group-active-bg;
+
+// $list-group-disabled-color: var(--#{$prefix}secondary-color);
+// $list-group-disabled-bg: $list-group-bg;
+
+// $list-group-action-color: var(--#{$prefix}secondary-color);
+// $list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+
+// $list-group-action-active-color: var(--#{$prefix}body-color);

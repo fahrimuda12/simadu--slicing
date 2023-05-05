@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <title>Rektorat</title>
+
+    <style>
+      .footer .content {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+
+      .card-profile {
+        background: linear-gradient(
+            279.1deg,
+            #00957b 35.41%,
+            rgba(0, 149, 123, 0) 35.41%
+          ),
+          #197db9;
+        border-radius: 10px;
+      }
+
+      .navbar-brand img {
+        width: 120px;
+        height: 35px;
+      }
+
+      @media (min-width: 768px) {
+        .card-profile .title div:first-child {
+          position: relative;
+          left: -6em;
+        }
+
+        .card-profile .title div {
+          position: relative;
+          left: -5em;
+        }
+
+        .sticky {
+          position: fixed;
+          top: 1vw;
+          left: -3%;
+          right: -3%;
+          z-index: 3;
+        }
+
+        .navbar-brand img {
+          width: 250px;
+          height: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #f3f4f8">
+    <!-- navbar -->
+    <nav
+      class="navbar fixed-top navbar-expand-lg bg-light px-4"
+      style="z-index: 5"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/img/logo-navbar.png" alt="logo navbar" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+            <li class="nav-item">
+              <a
+                class="nav-link text-capitalize active fw-semibold"
+                aria-current="page"
+                href="#"
+                >Agenda Univ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark text-capitalize fw-semibold" href="#"
+                >Rektor</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark text-capitalize fw-semibold" href="#"
+                >Biro</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-dark text-capitalize dropdown-toggle fw-semibold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Fakultas
+              </a>
+              <div class="dropdown-menu" style="z-index: 10">
+                <div
+                  class="row row-cols-md-2 g-2 px-4 align-items-center"
+                  style="width: 500px"
+                >
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/profit 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline">
+                          Ekonomi dan Bisnis
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/technique 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline">Teknik</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/law 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline">Hukum</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/handshake 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline"
+                          >Ilmu Sosial dan Ilmu Politik</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/presentation 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline"
+                          >Keguruan dan Ilmu Pendidikan</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/formula 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline"
+                          >Matematika dan Ilmu Pengetahuan Alam</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/sprout 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline">Pertanian</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col bg-gray rounded">
+                      <a
+                        href="#"
+                        class="nav-link d-flex align-items-center gap-2"
+                        aria-current="page"
+                      >
+                        <img
+                          src="../assets/img/first-aid-kit 1.png"
+                          width="24"
+                          height="24"
+                          class="p-1 rounded"
+                        />
+                        <span class="ms-1 d-none d-sm-inline">Kedokteran</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark text-capitalize fw-semibold" href="#"
+                >Pasca</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark text-capitalize fw-semibold" href="#"
+                >Lembaga</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark text-capitalize fw-semibold" href="#"
+                >Senat</a
+              >
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <button
+              class="btn btn-primary py-2 px-4 fs-7 fw-semibold text-uppercase"
+              type="submit"
+            >
+              Masuk
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <section
+      id="contentSection"
+      class="container mx-auto content-section"
+      style="margin-top: 5rem"
+    >
+      <div
+        id="cardProfile"
+        class="card-profile d-flex flex-column flex-md-row mx-lg-5 mt-5 p-4 gap-4 gap-md-0 align-items-center justify-content-between"
+      >
+        <div class="title d-flex flex-column flex-lg-row align-items-center">
+          <div class="p-3 bg-green-dark">
+            <p class="text-white text-uppercase">AGENDA TERPADU</p>
+          </div>
+          <div class="">
+            <p class="fs-3 fw-normal text-white">Rektorat</p>
+          </div>
+        </div>
+        <div>
+          <p class="fs-6 fw-normal text-white-50">Selasa</p>
+          <p class="fs-5 fs-4 fw-semibold text-white">10 Januari 2023</p>
+          <p class="fs-6 fw-normal text-white-50">16:53:53</p>
+        </div>
+      </div>
+      <div class="container my-4 p-4 bg-white align-items-center rounded-3">
+        <div
+          class="d-flex flex-lg-row flex-column gap-4 justify-content-evenly align-content-center"
+        >
+          <div
+            class="d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="position-relative">
+              <div
+                class="position-absolute bg-green-dark rounded py-2 text-white text-center px-2"
+                style="bottom: 20px"
+              >
+                <p>Plt. Rektor</p>
+              </div>
+              <img
+                src="../assets/img/profil/rektor.png"
+                alt=""
+                height="350"
+                width="350"
+                class="card-img-top"
+              />
+            </div>
+            <p class="w-75">Prof. Dr. Ir. Lusmeilia Afriani, D.E.A., I.P.M.</p>
+          </div>
+          <div
+            class="card-agenda d-flex flex-grow-1 gap-2 flex-column justify-content-end"
+          >
+            <div
+              class="d-flex flex-column gap-3 overflow-auto px-2"
+              style="height: 350px"
+            >
+              <div class="d-flex flex-column bg-gray py-2 px-4 rounded-3">
+                <p>08:30 s.d. 09:30</p>
+                <p>Penyerahan Petunjuk Operasional Kegiatan ( POK )</p>
+              </div>
+              <div
+                class="d-flex flex-column bg-gray py-2 px-4 rounded-3 active"
+              >
+                <p>10.00 s.d. 11:00</p>
+                <p>Izin menghadap Rektor. ( Dr Evi Poliklinik Unila )</p>
+              </div>
+              <div class="d-flex flex-column bg-gray py-2 px-4 rounded-3">
+                <p>08:30 s.d. 09:30</p>
+                <p>Penyerahan Petunjuk Operasional Kegiatan ( POK )</p>
+              </div>
+              <div class="d-flex flex-column bg-gray py-2 px-4 rounded-3">
+                <p>08:30 s.d. 09:30</p>
+                <p>Penyerahan Petunjuk Operasional Kegiatan ( POK )</p>
+              </div>
+              <div
+                class="d-flex flex-column bg-gray py-2 px-4 rounded-3 active"
+              >
+                <p>08:30 s.d. 09:30</p>
+                <p>Penyerahan Petunjuk Operasional Kegiatan ( POK )</p>
+              </div>
+            </div>
+            <div class="ms-auto">
+              <button type="button" class="btn btn-outline-secondary">
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="my-4 align-items-center rounded-3">
+        <div class="row row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="h-100 rounded-4 p-3 bg-white shadow">
+              <div class="position-relative mb-2">
+                <img
+                  src="../assets/img/profil/wakil-rektor.png"
+                  class="card-img-top rounded"
+                  alt="..."
+                  width="250"
+                  height="400"
+                />
+                <div
+                  class="position-absolute bg-green-dark rounded-bottom py-2 text-white text-center px-2 w-100"
+                  style="bottom: 0"
+                >
+                  <p class="text-start fs-4">Wakil Rektor Bidang Akademik</p>
+                </div>
+              </div>
+              <div class="d-flex flex-column px-2 gap-4">
+                <h5 class="card-title">Prof. Dr. Ir. Murhadi, M.Si.</h5>
+                <div class="d-flex flex-column gap-2">
+                  <div
+                    class="d-flex gap-2 bg-white border border-2 p-2 rounded-3"
+                  >
+                    <span class="fs-7 text-gray"
+                      ><p class="fs-4 fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex gap-2 bg-gray border border-2 p-2 rounded-3"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="../assets/img/pin 1.png"
+                        alt=""
+                        width="20px"
+                        height="20px"
+                        class="position-absolute"
+                        style="left: -10px; top: -20px"
+                      />
+                    </div>
+                    <span class="fs-7">
+                      <p class="fs-4 text-green-dark fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="text-blue-brand fs-6 fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex gap-2 bg-white border border-2 p-2 rounded-3"
+                  >
+                    <span class="fs-7 text-gray"
+                      ><p class="fs-4 fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-secondary w-100">
+                    Lihat Agenda
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="h-100 rounded-4 p-3 bg-white shadow">
+              <div class="position-relative mb-2">
+                <img
+                  src="../assets/img/profil/wakil-rektor-2.png"
+                  class="card-img-top"
+                  alt="..."
+                  width="250"
+                  height="400"
+                />
+                <div
+                  class="position-absolute bg-green-dark rounded-bottom py-2 text-white text-center px-2"
+                  style="bottom: 0"
+                >
+                  <p class="text-start fs-4">
+                    Wakil Rektor Bidang Umum dan Keuangan
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-column px-2 gap-4">
+                <h5 class="card-title">Prof. Dr. Ir. Murhadi, M.Si.</h5>
+                <div class="d-flex flex-column gap-2">
+                  <div
+                    class="d-flex gap-2 bg-white border border-2 p-2 rounded-3"
+                  >
+                    <span class="fs-7 text-gray"
+                      ><p class="fs-4 fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex gap-2 bg-gray border border-2 p-2 rounded-3"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="../assets/img/pin 1.png"
+                        alt=""
+                        width="20px"
+                        height="20px"
+                        class="position-absolute"
+                        style="left: -10px; top: -20px"
+                      />
+                    </div>
+                    <span class="fs-7">
+                      <p class="fs-4 text-green-dark fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="text-blue-brand fs-6 fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex gap-2 bg-white border border-2 p-2 rounded-3"
+                  >
+                    <span class="fs-7 text-gray"
+                      ><p class="fs-4 fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-secondary w-100">
+                    Lihat Agenda
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="h-100 rounded-4 p-3 bg-white shadow">
+              <div class="position-relative mb-2">
+                <img
+                  src="../assets/img/profil/wakil-rektor-3.png"
+                  class="card-img-top"
+                  alt="..."
+                  width="250"
+                  height="400"
+                />
+                <div
+                  class="position-absolute bg-green-dark rounded-bottom py-2 text-white text-center px-2"
+                  style="bottom: 0"
+                >
+                  <p class="text-start fs-4">
+                    Wakil Rektor Bidang Kemahasiswaan dan Alumni
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-column px-2 gap-4">
+                <h5 class="card-title">Prof. Dr. Ir. Murhadi, M.Si.</h5>
+                <div class="d-flex flex-column gap-2">
+                  <div
+                    class="d-flex gap-2 bg-white border border-2 p-2 rounded-3"
+                  >
+                    <span class="fs-7 text-gray"
+                      ><p class="fs-4 fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex gap-2 bg-gray border border-2 p-2 rounded-3"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="../assets/img/pin 1.png"
+                        alt=""
+                        width="20px"
+                        height="20px"
+                        class="position-absolute"
+                        style="left: -10px; top: -20px"
+                      />
+                    </div>
+                    <span class="fs-7">
+                      <p class="fs-4 text-green-dark fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="text-blue-brand fs-6 fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex gap-2 bg-white border border-2 p-2 rounded-3"
+                  >
+                    <span class="fs-7 text-gray"
+                      ><p class="fs-4 fw-semibold">08:30</p>
+                      s.d. 09:30</span
+                    >
+
+                    <p
+                      class="fw-semibold border-start border-2 border-dark ps-2"
+                    >
+                      Penyerahan Petunjuk Operasional Kegiatan ( POK )
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-secondary w-100">
+                    Lihat Agenda
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="h-100 rounded-4 p-3 bg-white shadow">
+              <div class="position-relative mb-2">
+                <img
+                  src="../assets/img/profil/wakil-rektor-4.png"
+                  class="card-img-top"
+                  alt="..."
+                  width="250"
+                  height="400"
+                />
+                <div
+                  class="position-absolute bg-green-dark rounded-bottom py-2 text-white text-center px-2"
+                  style="bottom: 0"
+                >
+                  <p class="text-start fs-4">
+                    Wakil Rektor Bidang Perencanaan, Kerjasama, & TIK
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-column px-2 gap-4">
+                <h5 class="card-title">Prof. Dr. Ir. Murhadi, M.Si.</h5>
+                <div class="d-flex flex-column gap-2">
+                  <div
+                    class="d-flex gap-2 bg-gray border border-2 p-2 rounded-3"
+                  >
+                    <p
+                      class="text-gray fw-light border-start border-2 border-dark ps-2"
+                    >
+                      “Belum ada Agenda Hari Ini”
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-secondary w-100">
+                    Lihat Agenda
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer fixed -->
+    <footer class="footer" style="z-index: 2">
+      <div
+        class="content d-flex flex-column pt-3 align-items-center justify-content-start w-100 h-100 gap-2"
+        style="background-color: #197db9"
+      >
+        <div class="d-flex flex-column">
+          <img
+            src="../assets/img/logo-footer.png"
+            alt=""
+            height="32"
+            width="200"
+          />
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <p class="fs-7 text-white text-center">
+            Jl. Prof. Dr. Sumantri Brojonegoro No. 1 Bandar Lampung, 35145,
+            INDONESIA.
+          </p>
+          <p class="fs-6 fs-7 text-white">
+            Telp +62 721 702673 . Fax +62 721 702767
+          </p>
+          <p class="fs-7 text-white">Email: humas@kpa.unila.ac.id</p>
+        </div>
+        <div class="d-flex flex-row align align-items-center gap-2">
+          <div>
+            <a
+              href="#"
+              class="nav-link d-flex align-items-center gap-2 border border-1 border-white rounded opacity-75"
+              aria-current="page"
+            >
+              <iconify-icon
+                icon="carbon:logo-facebook"
+                style="color: white"
+                width="22"
+                height="22"
+                class="p-1 rounded opacity-75"
+              ></iconify-icon>
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="nav-link d-flex align-items-center gap-2 border border-1 border-white rounded opacity-75"
+              aria-current="page"
+            >
+              <iconify-icon
+                icon="carbon:logo-facebook"
+                style="color: white"
+                width="22"
+                height="22"
+                class="p-1 rounded opacity-75"
+              ></iconify-icon>
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="nav-link d-flex align-items-center gap-2 border border-1 border-white rounded opacity-75"
+              aria-current="page"
+            >
+              <iconify-icon
+                icon="carbon:logo-facebook"
+                style="color: white"
+                width="22"
+                height="22"
+                class="p-1 rounded opacity-75"
+              ></iconify-icon>
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="nav-link d-flex align-items-center gap-2 border border-1 border-white rounded opacity-75"
+              aria-current="page"
+            >
+              <iconify-icon
+                icon="carbon:logo-facebook"
+                style="color: white"
+                width="22"
+                height="22"
+                class="p-1 rounded opacity-75"
+              ></iconify-icon>
+            </a>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-row p-2 justify-content-center w-100"
+          style="background-color: #0f4565"
+        >
+          <p class="fs-7 text-white">© 2023 All Right Reserved. UNILA</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- navbar -->
+    <script>
+      //make card-profile agenda when scrolling
+      //$(document).ready(function () {});
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      var contentProfile = document.getElementById("cardProfile");
+      var sticky = contentProfile.offsetTop;
+      var title = contentProfile.getElementsByClassName("title")[0];
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          contentProfile.classList.add("sticky");
+          title.classList.remove("title");
+        } else {
+          contentProfile.classList.remove("sticky");
+          title.classList.add("title");
+        }
+      }
+    </script>
+  </body>
+</html>
